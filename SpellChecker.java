@@ -13,11 +13,11 @@ public class SpellChecker {
 
 	public static String tail(String str) {
 		if (str.length() == 1){
-			return " ";
+			return "";
 		}
 		
 		else {
-			return tail(str.substring(1));
+			return str.substring(1);
 		}
 	
 	}
