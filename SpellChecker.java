@@ -16,34 +16,45 @@ public class SpellChecker {
 			return " ";
 		}
 		
-		else (str.length() > 1) {
-			
+		else {
 			return tail(str.substring(1));
 		}
-		
-
+	
 	}
 
 	public static int levenshtein(String word1, String word2) {
+	word1 = word1.toLowerCase();
+	word2 = word2.toLowerCase();
 	int lengthWord1 = word1.length();
 	int lengthWord2 = word2.length();
-	int sum = 0;
+	int insert = 0;
+	int delete = 0;
+	int replace = 0;
+
 	if (lengthWord1 == 0) {
-		return word2.length();
+		return lengthWord2;
 
 	}
 	if (lengthWord2 == 0) {
-		return word1.length();
+		return lengthWord1;
 	}
 	
-	if (word1.charAt(0) != word2.charAt(0)) {
-		sum = 1;
+	if (word1.charAt(0) == word2.charAt(0)) {
+		return levenshtein(tail(word1), tail(word2));
 	}
-		int insert = levenshtein (tail(word1),word2) +1 ;
-		 int delete = levenshtein(word1, tail(word2)) +1;
-		 int substitude = levenshtein(tail(word1), tail(word2)) + sum;
+	else if {
+		return levenshtein(tail(word1), word2) +1;
+
+	}
+	else if {
+		return levenshtein(word1, tail(word2)) +1;
+
+	}
+	else if {
+		return levenshtein(tail(word1), tail(word2)) +1;
+	}
 	
-	return Math.min(Math.min(insert, delete), substitude);
+	return Math.min(Math.min(insert, delete), replace);
 	}
 
 	public static String[] readDictionary(String fileName) {
