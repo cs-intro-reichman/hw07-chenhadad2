@@ -39,23 +39,21 @@ public class SpellChecker {
 		return lengthWord1;
 	}
 	
-	if (word1.charAt(0) == word2.charAt(0)) {
+	else if (word1.charAt(0) == word2.charAt(0)) {
 		return levenshtein(tail(word1), tail(word2));
 	}
-	else if {
-		return levenshtein(tail(word1), word2) +1;
+	else {
+		insert = levenshtein(tail(word1), word2) ;
+		delete = levenshtein(word1, tail(word2));
+		replace = levenshtein(tail(word1), tail(word2));
+		int temp = Math.min(insert, replace);
+		int min = Math.min(temp, delete);
+		return (1 + min);
 
 	}
-	else if {
-		return levenshtein(word1, tail(word2)) +1;
+}
 
-	}
-	else if {
-		return levenshtein(tail(word1), tail(word2)) +1;
-	}
-	
-	return Math.min(Math.min(insert, delete), replace);
-	}
+
 
 	public static String[] readDictionary(String fileName) {
 		String[] dictionary = new String[3000];
