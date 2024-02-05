@@ -17,7 +17,7 @@ public class SpellChecker {
 		}
 		
 		else {
-			return str.substring(1);
+			return str.substring(1, str.length());
 		}
 	
 	}
@@ -55,18 +55,18 @@ public class SpellChecker {
 
 
 
-	public static String[] readDictionary(String fileName) {
-		String[] dictionary = new String[3000];
+	//public static String[] readDictionary(String fileName) {
+	//	String[] dictionary = new String[3000];
 
-		In in = new In(fileName);
+	//	In in = new In(fileName);
 
 		// Your code here
 
-		return dictionary;
-	}
+		//return dictionary;
+	//}
 
-	public static String spellChecker(String word, int threshold, String[] dictionary) {
+	//public static String spellChecker(String word, int threshold, String[] dictionary) {
 		// Your code goes here
 	}
 
-}
+//}
