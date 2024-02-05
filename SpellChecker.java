@@ -46,8 +46,8 @@ public class SpellChecker {
 		insert = levenshtein(tail(word1), word2) ;
 		delete = levenshtein(word1, tail(word2));
 		replace = levenshtein(tail(word1), tail(word2));
-		int temp = Math.min(insert, replace);
-		int min = Math.min(temp, delete);
+		int temp = Math.min(insert, delete);
+		int min = Math.min(temp, replace);
 		return (1 + min);
 
 	}
