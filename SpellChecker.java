@@ -35,7 +35,7 @@ public class SpellChecker {
 		return lengthWord2;
 
 	}
-	if (lengthWord2 == 0) {
+	else if (lengthWord2 == 0) {
 		return lengthWord1;
 	}
 	
