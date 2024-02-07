@@ -71,16 +71,19 @@ public class SpellChecker {
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		int distance = 0;
-		String mid = "";
+		String similar = "";
+		int min = threshold + 1;
+	
+
 		for (int i = 0; i < dictionary.length; i++) {
 			distance = levenshtein(dictionary[i],word);
-			if (distance <= threshold) {
-				threshold = distance;
-				mid = dictionary[i];
+			if (distance < min) {
+				min = distance;
+				similar = dictionary[i];
 			}
 		}
-			if (distance < threshold) {
-				return mid;
+			if (min <= threshold) {
+				return similar;
 			}
 			else {
 				return word;
