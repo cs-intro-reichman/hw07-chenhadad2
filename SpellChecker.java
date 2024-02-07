@@ -8,6 +8,7 @@ public class SpellChecker {
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
+	
 		
 	}
 
@@ -55,18 +56,37 @@ public class SpellChecker {
 
 
 
-	//public static String[] readDictionary(String fileName) {
-	//	String[] dictionary = new String[3000];
+	public static String[] readDictionary(String fileName) {
+		String[] dictionary = new String[3000];
 
-	//	In in = new In(fileName);
+	In in = new In(fileName);
+		for (int i = 0; i<3000; i++){
+			dictionary[i] = in.readString();
+		}
 
-		// Your code here
-
-		//return dictionary;
-	//}
-
-	//public static String spellChecker(String word, int threshold, String[] dictionary) {
-		// Your code goes here
+		return dictionary;
 	}
 
-//}
+	
+
+	public static String spellChecker(String word, int threshold, String[] dictionary) {
+		int distance = 0;
+		String mid = "";
+		for (int i = 0; i < dictionary.length; i++) {
+			distance = levenshtein(dictionary[i],word);
+			if (distance <= threshold) {
+				mid = dictionary[i];
+			}
+		}
+			if (distance <= threshold) {
+				return mid;
+			}
+			else {
+				return word;
+			
+				
+			}
+		}
+	}
+
+
