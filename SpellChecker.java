@@ -74,11 +74,11 @@ public class SpellChecker {
 		String mid = "";
 		for (int i = 0; i < dictionary.length; i++) {
 			distance = levenshtein(dictionary[i],word);
-			if (distance <= threshold) {
+			if (distance < threshold) {
 				mid = dictionary[i];
 			}
 		}
-			if (distance <= threshold) {
+			if (distance < threshold) {
 				return mid;
 			}
 			else {
